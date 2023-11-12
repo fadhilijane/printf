@@ -20,6 +20,9 @@ int _printf(const char *format, ...)
 			counter++;
 		}
 		else
+			switch (*++format)
+			{
+				case 'c':
 
 	}
 }
