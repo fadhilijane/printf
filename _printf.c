@@ -1,3 +1,9 @@
+/**
+ * File: _printf.c
+ * Author: Fadhili Jane
+ *         Kaiga Githinji
+ */
+
 #include "main.h"
 /**
  * _putstring - The function to print the string.
@@ -77,6 +83,9 @@ int _printf(const char *format, ...)
 					break;
 				case 'i':
 					counter += _putdigit((long)va_arg(args, unsigned int), 16);
+					break;
+				case 'b':
+			   		counter += _putdigit((long)va_arg(args, unsigned int), 2);
 					break;
 
 				default:
