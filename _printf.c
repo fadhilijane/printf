@@ -35,7 +35,6 @@ int _printf(const char *format, ...)
 				case 'i':counter += write(stdout, va_arg(args, unsigned int), 1);
 
 				default:
-					_putchar('%');
 					_putchar(*format);
 					counter += 2;
 					break;
