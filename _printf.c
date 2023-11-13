@@ -1,5 +1,38 @@
 #include "main.h"
 
+int _putstring(char *str)
+{
+	int counter;
+	
+	counter = 0;
+	while (*str != '\0')
+	{
+		_putchar((int)*str);
+		counter++;
+		str++;
+	}
+	return counter;
+}
+
+int _putdigit(long num, int base)
+{
+	int counter;
+	char *numbers;
+
+	numbers = "0123456789abcdef";
+	if (num < 0)
+	{
+		write(1, "-", 1);
+		return _putdigit(-num, base); +1;
+	}
+	else if (num < base)
+		return _putchar(numbers[num]);
+	else
+	{
+		counter = _putdigit(num / base, base);
+		return counter + _putdigit(num %base, base);
+	}
+}
 /**
  * _printf - The printf function
  * @format: the format of the printf function
@@ -10,7 +43,9 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	va_start(args, format);
-	int counter = 0;
+	int counter ;
+
+	counter = 0;
 	
 	while (*format != '\0')
 	{
@@ -24,28 +59,25 @@ int _printf(const char *format, ...)
 			switch (*++format)
 			{
 				case 'c':
-					counter += write(stdout, va_arg(args, char), 1);
+					counter += _putchar(va_arg(args, int));
 					break;
 				case 's':
-					counter += write(stdout, va_arg(args, char *), 1);
+					counter += _putstring(va_arg(args, char *));
 					break;
 				case 'd':
-					counter += write(stdout, va_arg(args, int), 1);
+					counter += _putdigit((long)va_arg(args, int), 10);
 					break;
-<<<<<<< HEAD
-			//	case 'i':
-=======
-				case 'i':counter += write(stdout, va_arg(args, unsigned int), 1);
->>>>>>> 664e5eef0373f4b1f97806718788966caae17aa3
+				case 'i':
+					counter += _putdigit((long)va_arg(args, unsigned int), 16);
+					break;
 
 				default:
-					_putchar(*format);
-					counter += 2;
+					counter += write(1, format, 1);
 					break;
 			}
 		}
 		format++;
 	}
 	va_end(args);
-	return count;
+	return counter;
 }
