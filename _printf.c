@@ -13,7 +13,7 @@
 int _putstring(char *str)
 {
 	int count_chars;
-	
+
 	count_chars = 0;
 	while (*str != '\0')
 	{
@@ -21,7 +21,7 @@ int _putstring(char *str)
 		count_chars++;
 		str++;
 	}
-	return count_chars;
+	return (count_chars);
 }
 /**
  * _putdigit - The function to print a number in a specified base.
@@ -42,11 +42,13 @@ int _putdigit(long num, int base)
 		return (_putdigit(-num, base) + 1);
 	}
 	else if (num < base)
-		return _putchar(numbers[num]);
+	{
+		return (_putchar(numbers[num]));
+	}
 	else
 	{
 		count_digit = _putdigit(num / base, base);
-		return (count_digit + _putdigit(num %base, base));
+		return (count_digit + _putdigit(num % base, base));
 	}
 }
 /**
@@ -59,6 +61,7 @@ int _printf(const char *format, ...)
 {
 	int counter = 0;
 	va_list args;
+
 	va_start(args, format);
 
 	while (*format != '\0')
@@ -96,5 +99,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
-	return counter;
+	return (counter);
 }
