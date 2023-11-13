@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 				case 'd':
 					counter += write(stdout, va_arg(args, int), 1);
 					break;
-				case 'i':
+				case 'i':counter += write(stdout, va_arg(args, unsigned int), 1);
 
 				default:
 					_putchar('%');
