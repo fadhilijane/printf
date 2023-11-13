@@ -97,10 +97,10 @@ int _printf(const char *format, ...)
 					counter += _putdigit((long)va_arg(args, unsigned int), 8);
 					break;
 				case 'x':
-					counter += _putdigit((long)va_arg(args, int), 16); 
+					counter += _putdigit((long)va_arg(args, unsigned int), 16); 
 				   	break;
 				case 'X':
-					counter += _putdigit((long)va_arg(args, int), 16);
+					counter += _putdigit((long)va_arg(args, unsigned int), 16);
 					break;
 				default:
 					counter += write(1, format, 1);
