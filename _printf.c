@@ -16,13 +16,33 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			write(stdout, *format, strlen(*format));
+			_putchar(*format);
 			counter++;
 		}
 		else
+		{
 			switch (*++format)
 			{
 				case 'c':
+					counter += write(stdout, va_arg(args, char), 1);
+					break;
+				case 's':
+					counter += write(stdout, va_arg(args, char *), 1);
+					break;
+				case 'd':
+					counter += write(stdout, va_arg(args, int), 1);
+					break;
+				case 'i':
 
+				default:
+					_putchar('%');
+					_putchar(*format);
+					counter += 2;
+					break;
+			}
+		}
+		format++;
 	}
+	va_end(args);
+	return count;
 }
