@@ -90,6 +90,18 @@ int _printf(const char *format, ...)
 				case 'b':
 			   		counter += _putdigit((long)va_arg(args, unsigned int), 2);
 					break;
+				case 'u':
+					counter += _putdigit((long)va_arg(args, unsigned int), 10);
+					break;
+				case 'o':
+					counter += _putdigit((long)va_arg(args, unsigned int), 8);
+					break;
+				case 'x':
+					counter += _putdigit((long)va_arg(args, unsigned int), 16); 
+				   	break;
+				case 'X':
+					counter += _putdigit((long)va_arg(args, unsigned int), 16);
+					break;
 
 				default:
 					counter += write(1, format, 1);
