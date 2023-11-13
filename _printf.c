@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * _putstring - The function to print the string.
+ * @str: The string to be printed.
+ * Return: Number of characters printed.
+ */
 int _putstring(char *str)
 {
 	int counter;
@@ -13,6 +17,12 @@ int _putstring(char *str)
 	}
 	return counter;
 }
+/**
+ * _putdigit - The function to print a number in a specified base.
+ * @num: Parameter representing the number to be printed.
+ * @base: Parameter representing the base to print the number into.
+ * Return: +1 if num is negative
+ */
 
 int _putdigit(long num, int base)
 {
