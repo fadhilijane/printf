@@ -6,16 +6,16 @@
  */
 int _putstring(char *str)
 {
-	int counter;
+	int count_chars;
 	
-	counter = 0;
+	count_chars = 0;
 	while (*str != '\0')
 	{
 		_putchar((int)*str);
-		counter++;
+		count_chars++;
 		str++;
 	}
-	return counter;
+	return count_chars;
 }
 /**
  * _putdigit - The function to print a number in a specified base.
@@ -26,21 +26,21 @@ int _putstring(char *str)
 
 int _putdigit(long num, int base)
 {
-	int counter;
+	int count_digit;
 	char *numbers;
 
 	numbers = "0123456789abcdef";
 	if (num < 0)
 	{
 		write(1, "-", 1);
-		return _putdigit(-num, base); +1;
+		return (_putdigit(-num, base) + 1);
 	}
 	else if (num < base)
 		return _putchar(numbers[num]);
 	else
 	{
-		counter = _putdigit(num / base, base);
-		return counter + _putdigit(num %base, base);
+		count_digit = _putdigit(num / base, base);
+		return (count_digit + _putdigit(num %base, base));
 	}
 }
 /**
@@ -51,12 +51,10 @@ int _putdigit(long num, int base)
 
 int _printf(const char *format, ...)
 {
+	int counter = 0;
 	va_list args;
 	va_start(args, format);
-	int counter ;
 
-	counter = 0;
-	
 	while (*format != '\0')
 	{
 		if (*format != '%')
