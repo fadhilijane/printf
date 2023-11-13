@@ -102,6 +102,9 @@ int _printf(const char *format, ...)
 				case 'X':
 					counter += _putdigit((long)va_arg(args, unsigned int), 16);
 					break;
+				default:
+					counter += write(1, format, 1);
+					break;
 			}
 		}
 		format++;
