@@ -91,7 +91,7 @@ int _printf(const char *format, ...)
 			   		counter += _putdigit((long)va_arg(args, unsigned int), 2);
 					break;
 				case 'u':
-					counter += _putdigit((long)va_arg(args, unsigned int), 10);
+					counter += _putdigit((long)va_arg(args, unsigned int), 16);
 					break;
 				case 'o':
 					counter += _putdigit((long)va_arg(args, unsigned int), 8);
