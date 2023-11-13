@@ -82,7 +82,7 @@ int _printf(const char *format, ...)
 					counter += _putstring(va_arg(args, char *));
 					break;
 				case 'd':
-					counter += _putdigit((long)va_arg(args, int), 10);
+					counter += _putdigit((long)va_arg(args, int), 16);
 					break;
 				case 'i':
 					counter += _putdigit((long)va_arg(args, unsigned int), 16);
