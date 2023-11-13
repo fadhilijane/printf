@@ -32,10 +32,13 @@ int _printf(const char *format, ...)
 				case 'd':
 					counter += write(stdout, va_arg(args, int), 1);
 					break;
+<<<<<<< HEAD
 			//	case 'i':
+=======
+				case 'i':counter += write(stdout, va_arg(args, unsigned int), 1);
+>>>>>>> 664e5eef0373f4b1f97806718788966caae17aa3
 
 				default:
-					_putchar('%');
 					_putchar(*format);
 					counter += 2;
 					break;
