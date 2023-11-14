@@ -1,5 +1,5 @@
 #include "main.h"
-#include "_putdigit.c"
+
 /**
  * _putstring - The function to print the string.
  * @str: The string to be printed.
@@ -53,29 +53,6 @@ int write_format(char symbol, va_list args)
 		case 'x': case 'X':
 			counter += _putdigit((long)va_arg(args, unsigned int), 16);
 			break;
-		case 'S':
-			{
-				char *str = va_arg(args, char *);
-				while (*str != '\0') 
-				{
-					if (*str < 32 || *str >= 127)
-					{
-						counter += write(1, "\\x", 2);
-						counter += _putdigit(*str, 16);
-					} else
-					{
-						counter += _putchar(*str);
-					}
-					str++;
-				}
-				break;
-		 case 'p':
-				{
-					void *ptr = va_arg(args, void *);
-					counter += write(1, "0x", 2);
-					counter += _putdigit((long)ptr, 16);
-				}
-				break;
 		default:
 			counter += write(1, &symbol, 1);
 			break;
