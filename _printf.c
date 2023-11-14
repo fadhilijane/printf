@@ -11,7 +11,7 @@ int _putstring(char *str)
 	count_chars = 0;
 	while (*str != '\0')
 	{
-		_putchar((*str);
+		_putchar(*str);
 		count_chars++;
 		str++;
 	}
