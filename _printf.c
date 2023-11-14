@@ -75,13 +75,7 @@ int write_format(char symbol, va_list args)
 			counter += write(1, "0x", 2);
 			counter += _putdigit((long)va_arg(args, void*), 16);
 			break;
-		case 'r':
-		        {
-				char *str = va_arg(args, char *);
-				reverse_string(str);
-				counter += _putstring(str);
-			}
-			break;
+
 		default:
 			counter += write(1, &symbol, 1);
 			break;
