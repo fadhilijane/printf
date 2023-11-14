@@ -1,4 +1,5 @@
 #include "main.h"
+#include "_putdigit.c"
 /**
  * _putstring - The function to print the string.
  * @str: The string to be printed.
