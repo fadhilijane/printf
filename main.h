@@ -9,5 +9,6 @@ int _putchar(char c);
 int _putstring(char *str);
 int _putdigit(long num, int base);
 int _printf(const char *format, ...);
+int write_format(char symbol, va_list args);
 
 #endif
