@@ -18,6 +18,22 @@ int _putstring(char *str)
 	}
 	return(count_chars);
 }
+/**
+ *  * rot13 - Applies rot13 substitution cipher to a string.
+ *   * @str: The string to be processed.
+ *    */
+void rot13(char *str)
+{
+	while (*str != '\0')
+	{
+		if ((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z'))
+		{
+			char base = (*str >= 'a' && *str <= 'z') ? 'a' : 'A';
+			*str = (char)(((int)(*str - base + 13) % 26) + base);
+	        }
+		str++;
+	}
+}
 
 /**
  * write_format - gives the fomat of the printf
