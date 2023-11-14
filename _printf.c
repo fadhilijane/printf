@@ -54,7 +54,7 @@ int write_format(char symbol, va_list args)
 			counter += _putdigit((long)va_arg(args, unsigned int), 16);
 			break;
 		case 'p':
-			counter += _putdigit((long)va_arg(args, void *), 10);
+			counter += _putdigit((long)va_arg(args, void *), 16);
 			break;
 		default:
 			counter += write(1, &symbol, 1);
