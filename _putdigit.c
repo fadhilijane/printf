@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _putdigit - The function to print a number in a specified base.
  * @num: Parameter representing the number to be printed.
