@@ -15,7 +15,7 @@ int _putstring(char *str)
 		count_chars++;
 		str++;
 	}
-	return;
+	return(*str);
 }
 
 /**
