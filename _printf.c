@@ -35,7 +35,7 @@ int write_format(char symbol, va_list args)
 			counter += _putchar(va_arg(args, int));
 			break;
 		case 's':
-			counter += _putstring(va_arg(args, char*));
+			counter += _putstring(va_arg(args, char *));
 			break;
 		case 'd': case 'i':
 			counter += _putdigit((long)va_arg(args, int), 10);
