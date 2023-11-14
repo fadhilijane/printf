@@ -52,6 +52,23 @@ int write_format(char symbol, va_list args)
 		case 'x': case 'X':
 			counter += _putdigit((long)va_arg(args, unsigned int), 16);
 			break;
+		case 'S':
+			{
+				char *str = va_arg(args, char *);
+				while (*str != '\0') 
+				{
+					if (*str < 32 || *str >= 127)
+					{
+						counter += write(1, "\\x", 2);
+						counter += _putdigit(*str, 16);
+					} else
+					{
+						counter += _putchar(*str);
+					}
+					str++;
+				}
+				break;
+			}
 		default:
 			counter += write(1, &symbol, 1);
 			break;
