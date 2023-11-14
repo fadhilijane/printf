@@ -12,10 +12,10 @@ int _putstring(char *str)
 	while (*str != '\0')
 	{
 		_putchar((int)*str);
-		++count_chars;
-		++str;
+		count_chars++;
+		str++;
 	}
-	return (*str);
+	return (count_chars);
 }
 
 /**
