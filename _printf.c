@@ -25,7 +25,6 @@ int _putstring(char *str)
  * @args: arguments given
  * Return: count of xters
  */
-
 int write_format(char symbol, va_list args)
 {
 	int counter = 0;
@@ -72,7 +71,6 @@ int write_format(char symbol, va_list args)
  * @format: the format of the printf function
  * Return: the number of characters but not '\0'
  */
-
 int _printf(const char *format, ...)
 {
 	int counter = 0;
