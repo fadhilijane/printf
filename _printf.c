@@ -34,10 +34,6 @@ int write_format(char symbol, va_list args)
 		case 'c':
 			counter += _putchar(va_arg(args, int));
 			break;
-		case '%':
-			counter += _putchar('%');
-			break;
-
 		case 's':
 			counter += _putstring(va_arg(args, char *));
 			break;
