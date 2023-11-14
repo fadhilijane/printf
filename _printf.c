@@ -72,7 +72,13 @@ int write_format(char symbol, va_list args)
 					str++;
 				}
 				break;
-			}
+		 case 'p':
+				{
+					void *ptr = va_arg(args, void *);
+					counter += write(1, "0x", 2);
+					counter += _putdigit((long)ptr, 16);
+				}
+				break;
 		default:
 			counter += write(1, &symbol, 1);
 			break;
