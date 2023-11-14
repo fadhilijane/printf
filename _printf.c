@@ -12,8 +12,9 @@ int _putstring(char *str)
 	count_chars = 0;
 	while (*str != '\0')
 	{
-		count_chars += _putchar(*str);
+		_putchar(*str);
 		str++;
+		count_chars++;
 	}
 	return(count_chars);
 }
